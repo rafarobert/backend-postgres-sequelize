@@ -15,13 +15,13 @@ module.exports = {
         type: Sequelize.STRING
       },
       per_second_name: {
-        type: Sequelize.UUID
+        type: Sequelize.STRING
       },
       per_first_lastname: {
         type: Sequelize.STRING
       },
       per_second_lastname: {
-        type: Sequelize.UUID
+        type: Sequelize.STRING
       },
       per_doc_id: {
         type: Sequelize.INTEGER
@@ -91,6 +91,6 @@ module.exports = {
     });
   },
   down: (queryInterface, Sequelize) => {
-    return queryInterface.dropTable('es_people');
+    return queryInterface.dropTable('es_person');
   }
 };

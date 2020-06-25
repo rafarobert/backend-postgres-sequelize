@@ -3,6 +3,8 @@ const express = require('express');
 const passportOAuth2 = require('passport-oauth2');
 const bodyParser = require('body-parser');
 const bookRoutes = require('./server/routes/BookRoutes');
+const esPersonRoutes = require('./server/routes/EsPersonRoutes');
+const esUserRoutes = require('./server/routes/EsUserRoutes');
 const sessionV1 = require('./server/routes/ExpressSessionRoutes');
 const expressSession = require('express-session');
 const { v4: uuidv4 } = require('uuid');
@@ -64,6 +66,8 @@ if (app.get('env') === 'production') {
 // );
 
 app.use('/api/v1/books', bookRoutes);
+app.use('/api/v1/person', esPersonRoutes);
+app.use('/api/v1/user', esUserRoutes);
 app.use('/api/v1/session', sessionV1);
 
 // when a random route is inputed

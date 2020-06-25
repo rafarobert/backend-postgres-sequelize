@@ -3,9 +3,9 @@ module.exports = (sequelize, DataTypes) => {
   const es_person = sequelize.define('es_person', {
     per_uid: DataTypes.UUID,
     per_first_name: DataTypes.STRING,
-    per_second_name: DataTypes.UUID,
+    per_second_name: DataTypes.STRING,
     per_first_lastname: DataTypes.STRING,
-    per_second_lastname: DataTypes.UUID,
+    per_second_lastname: DataTypes.STRING,
     per_doc_id: DataTypes.INTEGER,
     per_doc_id_ext: DataTypes.INTEGER,
     per_doc_id_comp: DataTypes.INTEGER,
@@ -22,7 +22,9 @@ module.exports = (sequelize, DataTypes) => {
     per_origin_id: DataTypes.INTEGER,
     per_status: DataTypes.STRING,
     per_status_id: DataTypes.INTEGER
-  }, {});
+  }, {
+    tableName: 'es_person'
+  });
   es_person.associate = function(models) {
     // associations can be defined here
   };
